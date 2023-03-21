@@ -8,9 +8,14 @@ const list = document.getElementById('list')
 const shoppingList = []
     
 addItemBtn.addEventListener('click', function(){
+        if(!shoppingList.includes(itemInput.value)){
         shoppingList.push(itemInput.value)
         render()        
         itemInput.value = '' 
+    }else {
+        window.alert('El item ya esta en la lista')
+        itemInput.value = '' 
+    }
 })
 
 function render(){    
